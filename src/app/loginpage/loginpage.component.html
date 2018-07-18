@@ -1,0 +1,39 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header >
+      <img mat-card-avatar src="../../assets/images/CPT.jpg" fxLayout="column" fxFlex="10">
+      <div fxLayout="column" fxFlex="70" fxLayoutAlign="center center">
+        <mat-card-title >DolfieCPT</mat-card-title>
+        <mat-card-subtitle>@DolfieNation</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-divider class="style-fix" ></mat-divider>
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center"  fxFlexAlign="center">
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Username</mat-label>
+          <input matInput #usernameInput [formControl]="username" required maxlength="10">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint align="end">{{usernameInput.value?.length || 0}}/10</mat-hint>
+          <mat-error *ngIf="username.invalid">{{getErrorMessage(username)}}</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>Password</mat-label>
+          <input matInput #passwordInput [formControl]="password" required maxlength="10">
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-hint align="end">{{password.value?.length || 0}}/10</mat-hint>
+          <mat-error *ngIf="password.invalid">{{getErrorMessage(password)}}</mat-error>
+        </mat-form-field>
+
+      </p>
+    </mat-card-content>
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <button mat-button mat-raised-button color="primary" [disabled]="username.hasError('required') || password.hasError('required')" (click)="Login()">Login</button>
+    </div>
+
+  </mat-card>
+
+</div>

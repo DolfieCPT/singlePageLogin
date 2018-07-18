@@ -1,0 +1,19 @@
+:host {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("../../assets/images/CPT.jpg");
+}
+.container {
+  position: center;
+  right: 0;
+  margin: 20px;
+  max-width: 500px;
+  padding: 16px;
+  justify-content: center;
+
+}
+
+
